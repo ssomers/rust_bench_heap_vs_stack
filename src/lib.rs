@@ -34,6 +34,7 @@ impl Node {
     fn init(this: *mut Self) {
         unsafe {
             addr_of_mut!((*this).parent).write(None);
+            addr_of_mut!((*this).parent_idx).write(MaybeUninit::new(0));
             addr_of_mut!((*this).len).write(0);
         }
     }
